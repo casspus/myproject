@@ -41,4 +41,4 @@ console.log("2" == 2);
 let isChecked = true,
 	isClose = true;
 
-console.log(isClose && isChecked);	
+// console.log(isClose && isChecked);	
