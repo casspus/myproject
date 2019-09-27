@@ -2,7 +2,7 @@
 
 a = 5;
 
-console.log(a);
+console.log(a); 
 
 // console.log(4/0);
 // console.log('string'*9);
