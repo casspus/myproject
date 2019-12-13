@@ -99,9 +99,6 @@ let appData = {
 			alert("Способы доп. заработка: " + (i+1) + " - " + itemmassive);
 		});	
 
-        // appData.income.forEach (function (itemmassive, i) {
-        //     alert("Способы доп. заработка: " + (i+1) + " - " + itemmassive);
-        // });
 	}
 };	
 
