@@ -1,49 +1,34 @@
 'use strict';
 
-let box = document.getElementById("box"),
-	btn = document.getElementsByTagName('button'),
-	circle = document.getElementsByClassName('circle'),
-	heart = document.querySelectorAll('.heart'),
-	oneHeart = document.querySelector('.heart'),
-	wrapper = document.querySelector('.wrapper');
+let btn = document.querySelectorAll('button'),
+	wrap = document.querySelector('.wrapper'),
+	link = document.querySelector('a');
 
-box.style.backgroundColor = 'blue';
-btn[1].style.borderRadius = "100%";
-
-circle[0].style.backgroundColor = 'red';
-circle[1].style.backgroundColor = 'yellow';
-circle[2].style.backgroundColor = 'green';
-
-// for(let i = 0; i < heart.length; i++){
-// 	heart[i].style.backgroundColor = 'blue';
+// btn[0].onclick = function() {
+// 	alert('Вы нажали первую кнопку');
 // }
 
-// heart.forEach(function(item, i, heart) {
-// 	item.style.backgroundColor = "blue";
+// btn[0].addEventListener('click', function(event) {
+// 	console.log('Произошло событие: ' + event.type + ' на элементе ' + event.target);
 // });
 
-let div = document.createElement("div"),
-	text = document.createTextNode("Тут был я");
+// wrap.addEventListener('click', function() {
+// 	console.log('Произошло событие: ' + event.type + ' на элементе ' + event.target);
+// });
 
-div.classList.add('black');
+link.addEventListener('click', function(event) {
+	event.preventDefault();
+	console.log('Произошло событие: ' + event.type + ' на элементе ' + event.target);
+});
 
-// document.body.appendChild(div);
-// wrapper.appendChild(div);
-
-// div.innerHTML = '<h1>Hello World!</h1>';
-div.textContent = 'Hello World!';
-
-document.body.insertBefore(div, circle[0]);
-document.body.removeChild(circle[1]);
-wrapper.removeChild(heart[0]);
-
-document.body.replaceChild(btn[1], circle[1]);
-
-console.log(div);
-
-
-
-
+btn.forEach(function(item) {
+	item.addEventListener('mouseleave', function() {
+		console.log("Вышли!");
+	});
+});
+// btn[0].addEventListener('mouseenter', function() {
+// 	alert('Вы навели на первую кнопку');
+// });
 
 
 
