@@ -1,29 +1,45 @@
+/* Задание на урок:
+
+1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
+
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
+
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате: 
+    movies: {
+        'logan': '8.1'
+    }
+
+Проверить, чтобы все работало без ошибок в консоли */
+
 'use strict';
 
-// Создать класс options
-class Option {
-	// Он должен содержать свойства: height, width, bg, fontSize, textAlign
-	constructor(height, width, color, bg, fontSize, textAlign){
-		this.height = height,
-		this.width = width,
-		this.color = color,
-		this.bg = bg,
-		this.fontSize = fontSize,
-		this.textAlign = textAlign;
-	}
-	// Он должен содержать метод, создающий новый div на странице, записывающий в него любой текст и при помощи cssText изменять свой стиль из переданных параметров
-	createDiv() {
-		let elem = document.createElement('div');	
-		let text = document.createTextNode('Какой-то текст');	
-		document.body.appendChild(elem);
-		elem.appendChild(text);
-		let param = `height: ${this.height}px; width: ${this.width}px; color: ${this.color}; background: ${this.bg}; font-size: ${this.fontSize}px; text-align: ${this.textAlign}`;
-		elem.style.cssText = param;
-	}
-}
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-// Создать новый объект через класс
-const item = new Option(100, 300, '#333', 'yellow', 18, 'left');
+const personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false
+};
 
-// Вызвать его метод и получить элемент на странице
-item.createDiv();
+const 	a = prompt('Один из последних просмотренных фильмов?', ''),
+		b = prompt('На сколько оцените его?', ''),
+		c = prompt('Один из последних просмотренных фильмов?', ''),
+		d = prompt('На сколько оцените его?', '');
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+// console.log(numberOfFilms);
+console.log(personalMovieDB);
